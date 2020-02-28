@@ -15,9 +15,9 @@ Category.delete_all
 Review.delete_all
 ServiceCategory.delete_all
 
-u1 = User.create(name: "Valentin", username: "valentinp", address: "address", profession: "student", email: "valentinp@yahoo.com")
-u2 = User.create(name: "Yo", username: "yop", address: "123qwe", profession: "student", email: "yop@yahoo.com")
-u3 = User.create(name: "Alan", username: "teemo", address: "chemo", profession: "Mushroom Grower", email: "alanb@yahoo.com")
+u1 = User.create(name: "Valentin", username: "valentinp", password: "password", profession: "student", email: "valentinp@yahoo.com")
+u2 = User.create(name: "Yo", username: "yop", password: "123qwe", profession: "student", email: "yop@yahoo.com")
+u3 = User.create(name: "Alan", username: "teemo", password: "chemo", profession: "Mushroom Grower", email: "alanb@yahoo.com")
 
 c1 = Category.create(name: "Gaming")
 c2 = Category.create(name: "Drawing")

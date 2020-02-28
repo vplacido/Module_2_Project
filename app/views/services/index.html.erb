@@ -1,4 +1,9 @@
-<% @services.each do |u| %>
-    <%= u.name %>
-<% end %>
+<h1>List of Services</h1>
 
+<ol>
+    <% @services.each do |s| %>
+        <li>
+            <%= link_to s.title, service_path(s) %>
+        </li>
+    <% end %>
+</ol>

@@ -1,7 +1,7 @@
 <h1>List of Users</h1>
 
 <ol>
-    <% @User.each do |u| %>
+    <% @users.each do |u| %>
         <li>
             <%= link_to u.name, user_path(u) %>
         </li>
