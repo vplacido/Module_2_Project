@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_191056) do
     t.string "description"
     t.string "time_frame"
     t.float "price"
+    t.integer "seller_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,13 +63,10 @@ ActiveRecord::Schema.define(version: 2020_02_28_191056) do
     t.string "name"
     t.string "username"
     t.string "password"
-    t.integer "seller_id", null: false
     t.string "profession"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["seller_id"], name: "index_users_on_seller_id"
   end
 
-  add_foreign_key "users", "sellers"
 end
