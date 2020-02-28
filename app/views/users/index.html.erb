@@ -1,3 +1,9 @@
-<% @User.each do |u| %>
-    <%= u.name %>
-<% end %>
+<h1>List of Users</h1>
+
+<ol>
+    <% @User.each do |u| %>
+        <li>
+            <%= link_to u.name, user_path(u) %>
+        </li>
+    <% end %>
+</ol>
