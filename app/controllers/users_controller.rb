@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(params)
+        # byebug
+        @user = User.create(user_params)
         redirect_to user_path(@user)
     end
 
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        @user.update(params)
+        @user.update(user_params)
         redirect_to user_path(@user)
     end
 
@@ -32,5 +33,11 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.destroy
         redirect_to users_path
+    end
+
+    private
+
+    def user_params
+        params.require(:user).permit(:name, :username, :password, :profession, :email)
     end
 end

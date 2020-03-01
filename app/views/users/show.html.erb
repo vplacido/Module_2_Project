@@ -5,5 +5,11 @@
 <h3>Profession: <%= @user.profession %></h3>
 <h3>E-mail: <%= @user.email %></h3>
 
+<%= link_to "Hompage", users_path %>
 <%= link_to "Edit User", edit_user_path(@user) %>
-<%= link_to "Delete User", :method => :delete %>
+
+<%= form_tag(user_path(@user), method: :delete) do %>
+    <%= submit_tag "Delete Me" %>
+<% end %>
+
+<%= link_to "Delete User", :confirm => "Are you sure?", :method => :delete %>
