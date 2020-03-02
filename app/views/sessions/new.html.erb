@@ -1,9 +1,22 @@
-<h1>Login</h1>
+# <h1>Login</h1>
 
-<%= flash.notice %>
+# <%= flash.notice %>
 
-<%= form_tag login_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <%= submit_tag "Login" %>
-<% end %>
+# <%= form_tag login_path do %>
+#     <%= label_tag :username %>
+#     <%= text_field_tag :username %>
+#     <%= submit_tag "Login" %>
+# <% end %>
+
+  
+<%= form_for @user, url: login_path, method: :post do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  
+    <%= f.submit "log in" %>
+    Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+  <% end %>
+   

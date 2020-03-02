@@ -8,7 +8,10 @@
     <%= u.text_field :username %>
 
     <%= u.label :password, "Password: " %>
-    <%= u.text_field :password %>
+    <%= u.password_field :password %>
+
+    <%= u.label :password_confirmation %>
+    <%= u.password_field :password_confirmation %>
 
     <%= u.label :profession, "Profession: " %>
     <%= u.text_field :profession %>

@@ -11,5 +11,3 @@
 <%= form_tag(user_path(@user), method: :delete) do %>
     <%= submit_tag "Delete Me" %>
 <% end %>
-
-<%= link_to "Delete User", :confirm => "Are you sure?", :method => :delete %>

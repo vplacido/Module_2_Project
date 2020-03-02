@@ -60,3 +60,10 @@ sc1 = ServiceCategory.create(service_id: s1.id, category_id: c3.id)
 
 ## address in user is actually password but we just left it that way because it keeps saying filtered
 
+#list all the categories and give them with links for services and listings each
+
+#ill do service category
+
+# add a button to show the services of that same category in between detail page and title have like buttons
+# same for when editing 
+

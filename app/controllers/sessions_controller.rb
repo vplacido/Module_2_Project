@@ -18,3 +18,6 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
 end
+
+
+#pass a hidden field to contain id of the session 
