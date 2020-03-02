@@ -14,6 +14,7 @@ class ListingsController < ApplicationController
     end
 
     def create
+        # byebug
         @listing = Listing.create(listing_params)
         redirect_to listings_path
     end

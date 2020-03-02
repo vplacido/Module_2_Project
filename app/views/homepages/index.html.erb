@@ -1,0 +1,28 @@
+<h1>This is the Homepage</h1>
+
+<h2>Here are the listings: </h2>
+<% @listings.each do |l| %>
+    <%= link_to l.title, listing_path(l) %>
+<% end %>
+
+<h2>Here are the Services: </h2>
+<% @services.each do |s| %>
+    <%= link_to s.title, service_path(s) %>
+<% end %>
+
+<h2>Here is Info about the user</h2>
+<%= link_to "#{@user.name}'s Settings", edit_user_path(@user) %>
+
+<h3> My Listings</h3>
+<% @listings.each do |l| %>
+    <% if l.user_id == session[:user_id] %>
+        <%= link_to l.title, listing_path(l) %>
+    <% end %>
+<% end %>
+
+<h3> My Services</h3>
+<% @services.each do |s| %>
+    <% if s.seller_id == session[:user_id] %>
+        <%= link_to s.title, service_path(s) %>
+    <% end %>
+<% end %>
