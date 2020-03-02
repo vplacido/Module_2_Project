@@ -3,4 +3,8 @@ class User < ApplicationRecord
   has_many :services, :foreign_key => "seller_id"
   has_many :listings
   has_many :reviews, through: :listings 
+
+  # def 
+
+  # end 
 end
