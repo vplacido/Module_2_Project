@@ -1,0 +1,14 @@
+<h1>Information about Listing </h1>
+
+<h3>Title: <%= @listing.title %></h3>
+<h3>Description: <%= @listing.description %></h3>
+<h3>Time Frame: <%= @listing.time_frame %></h3>
+<h3>Price: <%= @listing.price %></h3>
+
+<%= link_to "Edit Listing", edit_listing_path(@listing) %>
+
+<%= link_to "Return to Homepage", listings_path %>
+
+<%= form_tag(listing_path(@listing), method: :delete) do %>
+    <%= submit_tag "Delete Me" %>
+<% end %>

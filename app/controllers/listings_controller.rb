@@ -14,8 +14,8 @@ class ListingsController < ApplicationController
     end
 
     def create
-        @listing = Listing.create(params)
-        redirect_to listing_path(@listing)
+        @listing = Listing.create(listing_params)
+        redirect_to listings_path
     end
 
     def edit
@@ -24,12 +24,19 @@ class ListingsController < ApplicationController
 
     def update
         @listing = Listing.find(params[:id])
-        @listing.update(params)
+        @listing.update(listing_params)
         redirect_to listing_path(@listing)
     end
 
     def destroy
-        
+        @listing = Listing.find(params[:id])
+        @listing.destroy
         redirect_to listings_path
+    end
+
+    private 
+
+    def listing_params
+        params.require(:listing).permit(:user_id, :title, :description, :time_frame, :price, :packages,)
     end
 end
