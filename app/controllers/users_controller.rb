@@ -15,8 +15,9 @@ class UsersController < ApplicationController
 
     def create
         # byebug
-        @user = User.create(user_params)
-        session[:user_id] = @user.id 
+        @user = User.create(login_params)
+        return redirect_to controller: 'users', action: 'new' unless @user.save
+        session[:user_id] = @user.id
         redirect_to user_path(@user)
     end
 
@@ -37,6 +38,11 @@ class UsersController < ApplicationController
     end
 
     private
+
+    def login_params
+        params.require(:user).permit(:username, :password, :password_confirmation)
+
+    end 
 
     def user_params
         params.require(:user).permit(:name, :username, :password, :password_confirmation, :profession, :email)
