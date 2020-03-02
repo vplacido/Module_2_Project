@@ -1,0 +1,13 @@
+<h1>All of the Listings</h1>
+
+<ul>
+    <% @listings.each do |l| %>
+        <li>
+            <%= link_to l.title, listing_path(l) %>
+        </l1>
+    <% end %>
+</ul>
+
+<%= link_to "Create a New Listing", new_listing_path %>
+
+go through serivce models to find all sellers service.map.seller.names
