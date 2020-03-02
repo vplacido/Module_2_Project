@@ -12,7 +12,7 @@ class ServicesController < ApplicationController
     end
 
     def create
-        @service = Service.create(params)
+        @service = Service.create(service_params)
         redirect_to service_path(@service)
     end
 
@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
 
     def update
         @service = Service.find(params[:id])
-        @service.update(params)
+        @service.update(service_params)
         redirect_to service_path(@service)
     end
 
@@ -30,5 +30,12 @@ class ServicesController < ApplicationController
         
         redirect_to services_path
     end
+
+    private
+
+    def service_params
+        params.require(:service).permit(:title, :description, :time_frame, :price, :seller_id)
+
+    end 
 end
 

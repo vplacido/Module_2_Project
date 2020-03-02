@@ -1,0 +1,17 @@
+<%= form_for @service do |s| %>
+    <%= s.label :title %>
+    <%= s.text_field :title %>
+    <br>
+    <%= s.label :description %>
+    <%= s.text_field :description %>
+    <br>
+    <%= s.label :time_frame %>
+    <%= s.text_field :time_frame %>
+    <br>
+    <%= s.label :price %>
+    <%= s.number_field :price, step: :any %>
+    <br>
+    <%= s.collection_select(:seller_id, User.all, :id, :name) %>
+    <%= s.submit %>
+<% end %>
+

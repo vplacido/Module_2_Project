@@ -1,4 +1,4 @@
-<h1> List of Services </h1>
+<h1> Detail page </h1>
 
 <h3>Title: <%= @service.title %></h3>
 
@@ -10,3 +10,12 @@
 
 
 
+
+<%= link_to "Edit your service", edit_service_path %>
+<%= link_to "List of services", services_path %>
+
+<%= form_tag(service_path(@service), method: :delete) do %>
+  <div>
+    <%= submit_tag 'Remove this service' %>
+  </div>
+<% end %>

@@ -1,9 +1,13 @@
 <h1>List of Services</h1>
 
-<ol>
+<ul>
     <% @services.each do |s| %>
         <li>
             <%= link_to s.title, service_path(s) %>
         </li>
     <% end %>
-</ol>
+</ul>
+
+<div>
+    <%= link_to "Offer a service", new_service_path %>
+</div>
