@@ -1,0 +1,12 @@
+<h1>Info About <%= @category.name %></h1>
+
+<h3>Name: <%= @category.name %></h3>
+<h3>List of listings: </h3>
+<ul>
+    <%= form_for @listings do |l| %>
+       <li><%= l.category %></li>
+    <% end %>
+</ul>
+
+<h3><%= link_to "Edit Category", edit_category_path(@category) %></h3>
+<h3><%= link_to "Homepage", homepage_path %></h3>

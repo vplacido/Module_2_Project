@@ -1,5 +1,7 @@
 <h1>This is the Homepage</h1>
 
+<h2><%= link_to "View All Categories", categories_path %> </h2>
+
 <h2>Here are the listings: </h2>
 <% @listings.each do |l| %>
     <%= link_to l.title, listing_path(l) %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :listings
   resources :services
   resources :users
+  resources :categories
 
   # get “/login”, to: “sessions#new”
   # post “/login”, to: “sessions#create”
