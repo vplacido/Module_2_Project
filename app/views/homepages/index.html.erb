@@ -3,14 +3,20 @@
 <h2>Here are the listings: </h2>
 <% @listings.each do |l| %>
     <%= link_to l.title, listing_path(l) %>
-<% end %>
+<% end %><br><br>
+<div>
+    <%= link_to "View all Listings", listings_path %>
+</div>
 
 <h2>Here are the Services: </h2>
 <% @services.each do |s| %>
     <%= link_to s.title, service_path(s) %>
-<% end %>
+<% end %><br><br>
+<div>
+    <%= link_to "View all Services", services_path %>
+</div>
 
-<h2>Here is Info about the user</h2>
+<h2>Here is Info about <%= @user.username %></h2>
 <%= link_to "#{@user.name}'s Settings", edit_user_path(@user) %>
 
 <h3> My Listings</h3>
