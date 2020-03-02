@@ -1,10 +1,20 @@
 class SessionsController < ApplicationController
     def new
-        # nothing to do here!
     end
- 
+  
     def create
-        session[:username] = params[:username]
-        redirect_to '/'
+      user = User.find_by(username: params[:username])
+      if user
+          session[:user_id] = user.id
+          redirect_to users_path
+      else 
+          flash[:notice] = "No user found with those credentials"
+          render :new
+      end
+    end
+  
+    def logout
+      session.clear
+      redirect_to login_path
     end
 end
