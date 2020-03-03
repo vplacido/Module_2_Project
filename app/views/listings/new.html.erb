@@ -1,7 +1,9 @@
 <h1>Create a New Listing</h1>
 
+
+
 <%= form_for @listing do |l| %>
-    <%= l.collection_select(:user_id, User.all, :id, :name) %>
+    <%#= l.collection_select(:user_id, User.all, :id, :name) %>
     
     <div>
         <%= l.label :title, "Title: " %>
