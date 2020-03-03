@@ -8,6 +8,10 @@ class Service < ApplicationRecord
     def print_seller_name
       self.all.map { |s| s.seller.name }
     end 
+
+    def create_review
+      self.reviews
+    end 
 end
 
 

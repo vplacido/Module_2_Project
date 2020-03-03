@@ -1,6 +1,6 @@
 <h1>Information about Me</h1>
 
-<h3>Name: <%= @user.name %></h3>
+<h3>Name: <%= @user.name %></h3> 
 <h3>Username: <%= @user.username %></h3>
 <h3>Profession: <%= @user.profession %></h3>
 <h3>E-mail: <%= @user.email %></h3>
@@ -12,4 +12,3 @@
     <%= submit_tag "Delete Me" %>
 <% end %>
 
-<%= link_to "Delete User", :confirm => "Are you sure?", :method => :delete %>

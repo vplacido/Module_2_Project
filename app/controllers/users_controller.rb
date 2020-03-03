@@ -15,8 +15,19 @@ class UsersController < ApplicationController
 
     def create
         # byebug
-        @user = User.create(user_params)
-        redirect_to user_path(@user)
+
+        @user = User.new(login_params)
+        if @user.valid?
+            @user.save
+            session[:user_id] = @user.id
+            redirect_to homepage_path
+        else
+            render :new
+        end
+        # @user = User.create(user_params)
+        # redirect_to user_path(@user)
+
+
     end
 
     def edit
@@ -40,4 +51,8 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:name, :username, :password, :profession, :email)
     end
+
+    def login_params
+        params.require(:user).permit(:username, :password)
+    end 
 end

@@ -1,4 +1,4 @@
-<h1>Create a New User</h1>
+<h1>Create a New User</h1> or <%= link_to "Login", login_path %></h1>
 
 <%= form_for @user do |u| %>
     <%= u.label :name, "Name: " %>
@@ -8,7 +8,7 @@
     <%= u.text_field :username %>
 
     <%= u.label :password, "Password: " %>
-    <%= u.text_field :password %>
+    <%= u.password_field :password %>
 
     <%= u.label :profession, "Profession: " %>
     <%= u.text_field :profession %>

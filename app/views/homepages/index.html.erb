@@ -19,7 +19,7 @@
 </div>
 
 <h2>Here is Info about <%= @user.username %></h2>
-<%= link_to "#{@user.name}'s Settings", edit_user_path(@user) %>
+<%= link_to "#{@user.username}'s Settings", edit_user_path(@user) %>
 
 <h3> My Listings</h3>
 <% @listings.each do |l| %>

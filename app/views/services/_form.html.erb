@@ -11,7 +11,7 @@
     <%= s.label :price %>
     <%= s.number_field :price, step: :any %>
     <br>
-    <%= s.collection_select(:seller_id, User.all, :id, :name) %>
+    <%= s.collection_select(:seller_id, User.all, :id, :username) %>
     <%= s.submit %>
 <% end %>
 <h3><%= link_to "Homepage", homepage_path %></h3>

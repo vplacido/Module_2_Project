@@ -15,6 +15,10 @@ Category.delete_all
 Review.delete_all
 ServiceCategory.delete_all
 
+# u1 = User.create(name: "Valentin", username: "valentinp", password_digest: "password", profession: "student", email: "valentinp@yahoo.com")
+# u2 = User.create(name: "Yo", username: "yop", password_digest: "123qwe", profession: "student", email: "yop@yahoo.com")
+# u3 = User.create(name: "Alan", username: "teemo", password_digest: "chemo", profession: "Mushroom Grower", email: "alanb@yahoo.com")
+
 u1 = User.create(name: "Valentin", username: "valentinp", password: "password", profession: "student", email: "valentinp@yahoo.com")
 u2 = User.create(name: "Yo", username: "yop", password: "123qwe", profession: "student", email: "yop@yahoo.com")
 u3 = User.create(name: "Alan", username: "teemo", password: "chemo", profession: "Mushroom Grower", email: "alanb@yahoo.com")
@@ -49,7 +53,7 @@ sc1 = ServiceCategory.create(service_id: s1.id, category_id: c1.id)
 
 r1 = Review.create(service_id: s3.id, description: "Need to get some vocal lessons...", rating: 1.00)
 r2 = Review.create(service_id: s2.id, description: "Amazing drawing skills!", rating: 4.00)
-r3 = Review.create(service_id: s1.id, description: "This guy's legit", rating: 5.00)
+r3 = Review.create(service_id: s1.id, description: "Amazing personality and carried my games", rating: 5.00)
 
 # sc1 = ServiceCategory.create(service_id: 1, category_id: 1)
 # sc1 = ServiceCategory.create(service_id: 2, category_id: 2)
