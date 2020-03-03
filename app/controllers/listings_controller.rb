@@ -24,6 +24,7 @@ class ListingsController < ApplicationController
     end
 
     def update
+        # byebug
         @listing = Listing.find(params[:id])
         @listing.update(listing_params)
         redirect_to listing_path(@listing)
