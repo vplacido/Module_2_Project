@@ -1,7 +1,13 @@
 <h1>Create a New Listing</h1>
 
+
+
 <%= form_for @listing do |l| %>
+<<<<<<< HEAD
     <%= l.collection_select(:user_id, User.all, :id, :username) %>
+=======
+    <%#= l.collection_select(:user_id, User.all, :id, :name) %>
+>>>>>>> f8d30c756cb8c4004138ba85027e44b5d08c8816
     
     <div>
         <%= l.label :title, "Title: " %>

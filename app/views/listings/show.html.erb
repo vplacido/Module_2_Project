@@ -1,5 +1,10 @@
 <h1>Information about Listing </h1>
 
+<% @listing.categories.each do |l| %>
+    <%= link_to l.name, category_path(l) %>
+    <br>
+  <% end %>
+
 <h3>Title: <%= @listing.title %></h3>
 <h3>Description: <%= @listing.description %></h3>
 <h3>Time Frame: <%= @listing.time_frame %></h3>

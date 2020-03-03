@@ -16,9 +16,15 @@
 
 
 
+<<<<<<< HEAD
 <%= link_to '<button type="button">Edit your service</button>'.html_safe, edit_service_path %>
 <%= link_to '<button type="button">List of services</button>'.html_safe, services_path %>
 <%= link_to '<button type="button">Create a new review</button>'.html_safe, new_review_path%>
+=======
+<%= link_to "Edit your service", edit_service_path %>
+<%= link_to "List of services", services_path %>
+<%= link_to "Create a new review", new_review_path %>
+>>>>>>> f8d30c756cb8c4004138ba85027e44b5d08c8816
 
 <%= form_tag(service_path(@service), method: :delete) do %>
   <div>

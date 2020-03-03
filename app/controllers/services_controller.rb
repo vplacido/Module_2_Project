@@ -24,6 +24,7 @@ class ServicesController < ApplicationController
     end
 
     def update
+        # byebug
         @service = Service.find(params[:id])
         @service.update(service_params)
         redirect_to service_path(@service)

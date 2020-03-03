@@ -1,42 +1,47 @@
 <h1>Edit this Listing</h1>
 
-<%= form_for @listing do |l| %>
-    <%= l.collection_select(:user_id, User.all, :id, :username) %>
-    
-    <div>
-        <%= l.label :title, "Title: " %>
-        <%= l.text_field :title %>
-    </div>
+<% if session[:user_id] == @listing.user_id %>
+    <%= form_for @listing do |l| %>
+        <h4><%= User.find(session[:user_id]).username %></h4>
+        <%#= l.collection_select(:user_id, User.all, :id, :name) %>
+        
+        <div>
+            <%= l.label :title, "Title: " %>
+            <%= l.text_field :title %>
+        </div>
 
-    <div>
-        <%= l.label :description, "Description: " %>
-        <%= l.text_field :description %>
-    </div>
+        <div>
+            <%= l.label :description, "Description: " %>
+            <%= l.text_field :description %>
+        </div>
 
-    <div>
-        <%= l.label :time_frame, "Time Frame: " %>
-        <%= l.text_field :time_frame %>
-    </div>
+        <div>
+            <%= l.label :time_frame, "Time Frame: " %>
+            <%= l.text_field :time_frame %>
+        </div>
 
-    <div>
-        <%= l.label :price, "Price: " %>
-        <%= l.number_field :price, step: :any %>
-    </div>
+        <div>
+            <%= l.label :price, "Price: " %>
+            <%= l.number_field :price, step: :any %>
+        </div>
 
-    <div>
-        <%= l.label :packages, "Packages: " %>
-        <%= l.check_box :packages %>
-    </div>
+        <div>
+            <%= l.label :packages, "Packages: " %>
+            <%= l.check_box :packages %>
+        </div>
 
-    <div>
-        <%= l.submit "Edit Listing" %>
-    </div>
-<% end %>
+        <div>
+            <%= l.submit "Edit Listing" %>
+        </div>
+    <% end %>
 
-<%= link_to "Return to Homepage", listings_path %>
+    <%= link_to "Return to Homepage", listings_path %>
 
-<%= form_tag(listing_path(@listing), method: :delete) do %>
-    <%= submit_tag "Delete Me" %>
+    <%= form_tag(listing_path(@listing), method: :delete) do %>
+        <%= submit_tag "Delete Me" %>
+    <% end %>
+<% else %>
+        <h1>Sorry only <%= User.find(@listing.user_id).username %> can edit this listing!</h1>
 <% end %>
 
 <h3><%= link_to "Homepage", homepage_path %></h3>

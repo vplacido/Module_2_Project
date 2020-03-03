@@ -1,3 +1,7 @@
 <h1> Edit your service </h1>
 
-<%= render 'form' %>
+<% if session[:user_id] == @service.seller_id %>
+    <%= render 'form' %>
+<% else %>
+    <h1>Sorry only <%= User.find(@service.seller_id).username %> can edit this listing!</h1>
+<% end %>
