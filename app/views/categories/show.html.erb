@@ -2,11 +2,11 @@
 
 <h3>Name: <%= @category.name %></h3>
 <h3>List of listings: </h3>
-<ul>
-    <%= form_for @listings do |l| %>
-       <li><%= l.category %></li>
+<% @listings.each do |l| %>
+    <% if l.categories[0].id == params[:id].to_i %>
+        <%= link_to l.title, listing_path(l) %>
     <% end %>
-</ul>
+<% end %>
 
 <h3><%= link_to "Edit Category", edit_category_path(@category) %></h3>
 <h3><%= link_to "Homepage", homepage_path %></h3>
