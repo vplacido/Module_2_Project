@@ -15,4 +15,8 @@ class User < ApplicationRecord
   # compare seller_id with this user_id 
   # return true if the user is a seller
   # false is user is not a seller and make the user a seller
+
+  def self.isSeller
+    
+  end
 end
