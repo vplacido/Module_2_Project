@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
     def show
         @category = Category.find(params[:id])
         @listings = Listing.all
+        @services = Service.all
         # byebug
     end
 end

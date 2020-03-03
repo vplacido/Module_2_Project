@@ -8,5 +8,12 @@
     <% end %>
 <% end %>
 
+<h3>List of services: </h3>
+<% @services.each do |s| %>
+    <% if s.categories[0].id == params[:id].to_i %>
+        <%= link_to s.title, service_path(s) %>
+    <% end %>
+<% end %>
+
 <h3><%= link_to "Edit Category", edit_category_path(@category) %></h3>
 <h3><%= link_to "Homepage", homepage_path %></h3>
