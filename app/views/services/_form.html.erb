@@ -1,4 +1,5 @@
 <%= form_for @service do |s| %>
+    <%#= s.collection_select(:category_ids, Category.all, :id, :name) %>
     <%= s.label :title %>
     <%= s.text_field :title %>
     <br>
@@ -11,7 +12,7 @@
     <%= s.label :price %>
     <%= s.number_field :price, step: :any %>
     <br>
-    <h4><%= User.find(@service.seller_id).username %></h4>
+    <h4><%= User.find(s.seller_id).username %></h4>
     <%#= s.collection_select(:seller_id, User.all, :id, :name) %>
     <%= s.submit %>
 <% end %>
