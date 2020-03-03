@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_191056) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "listing_id"
+    t.integer "service_id"
     t.string "description"
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false

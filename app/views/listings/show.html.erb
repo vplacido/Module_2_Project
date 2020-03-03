@@ -9,6 +9,14 @@
 
 <%= link_to "Return to Homepage", listings_path %>
 
+<%= link_to ""
+
 <%= form_tag(listing_path(@listing), method: :delete) do %>
     <%= submit_tag "Delete Me" %>
 <% end %>
+
+
+
+<%# @listing.reviews.each do  |r| %>
+    <%#= r.description %>
+<%# end %>

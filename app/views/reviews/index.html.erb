@@ -1,0 +1,18 @@
+<h1> List of Reviews </h1>
+
+<ul>
+    <% @reviews.each do |r| %>
+       <li> <%= link_to r.description, review_path(r)  %>
+       <br>
+            <%= r.rating%> </li>
+    <% end %>
+</ul>
+
+
+
+
+<%# to make a comment in erb %>
+<%#maybe make it so each review is a link to the service it reviewed%>
+<%#maybe make it so instead of the number of rating, we can show a star rating?%>
+
+

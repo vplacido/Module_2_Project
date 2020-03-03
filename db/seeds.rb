@@ -37,21 +37,25 @@ lc2 = ListingCategory.create(listing_id: l2.id, category_id: c2.id)
 lc3 = ListingCategory.create(listing_id: l3.id, category_id: c1.id)
 
 
-r1 = Review.create(listing_id: l1.id, description: "Need to get some vocal lessons...", rating: 1.00)
-r2 = Review.create(listing_id: l2.id, description: "Amazing drawing skills!", rating: 4.00)
-r3 = Review.create(listing_id: l3.id, description: "This guy's legit", rating: 5.00)
+s1 = Service.create(title: "Play league", description: "Get to play with a cute girl", time_frame: "1 hour", price: 5.00, seller_id: u1.id)
+s2 = Service.create(title: "Paint anything", description: "Ask me anything to paint", time_frame: "2 hours", price: 15.00, seller_id: u2.id)
+s3 = Service.create(title: "Making covers", description: "Will do a cover of any song", time_frame: "7 days", price: 50.00, seller_id: u3.id)
+
+sc1 = ServiceCategory.create(service_id: s3.id, category_id: c3.id)
+sc1 = ServiceCategory.create(service_id: s2.id, category_id: c2.id)
+sc1 = ServiceCategory.create(service_id: s1.id, category_id: c1.id)
+    
+    
+
+r1 = Review.create(service_id: s3.id, description: "Need to get some vocal lessons...", rating: 1.00)
+r2 = Review.create(service_id: s2.id, description: "Amazing drawing skills!", rating: 4.00)
+r3 = Review.create(service_id: s1.id, description: "This guy's legit", rating: 5.00)
 
 # sc1 = ServiceCategory.create(service_id: 1, category_id: 1)
 # sc1 = ServiceCategory.create(service_id: 2, category_id: 2)
 # sc1 = ServiceCategory.create(service_id: 3, category_id: 3)
 
-s1 = Service.create(title: "Play league", description: "Get to play with a cute girl", time_frame: "1 hour", price: 5.00, seller_id: u1.id)
-s2 = Service.create(title: "Paint anything", description: "Ask me anything to paint", time_frame: "2 hours", price: 15.00, seller_id: u2.id)
-s3 = Service.create(title: "Making covers", description: "Will do a cover of any song", time_frame: "7 days", price: 50.00, seller_id: u3.id)
 
-sc1 = ServiceCategory.create(service_id: s3.id, category_id: c1.id)
-sc1 = ServiceCategory.create(service_id: s2.id, category_id: c2.id)
-sc1 = ServiceCategory.create(service_id: s1.id, category_id: c3.id)
 
 
 

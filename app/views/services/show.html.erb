@@ -1,5 +1,10 @@
 <h1> Detail page </h1>
 
+<% @service.categories.each do |c| %>
+  <%= link_to c.name, category_path(c) %>
+  <br>
+<% end %>
+
 <h3>Title: <%= @service.title %></h3>
 
 <h3>Description: <%= @service.description %></h3>
@@ -13,6 +18,7 @@
 
 <%= link_to "Edit your service", edit_service_path %>
 <%= link_to "List of services", services_path %>
+<%= link_to "Create a new review", new_review_path, onclick="service.new.review" %>
 
 <%= form_tag(service_path(@service), method: :delete) do %>
   <div>
