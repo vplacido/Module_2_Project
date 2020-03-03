@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :listings
   resources :services
   resources :users
-  resources :categories
+  resources :categories, only: [:index, :show]
 
   # get “/login”, to: “sessions#new”
   # post “/login”, to: “sessions#create”
