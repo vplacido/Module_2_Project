@@ -3,7 +3,8 @@
 
 
 <%= form_for @listing do |l| %>
-    <%= l.collection_select(:user_id, User.all, :id, :username) %>
+    <%#= l.collection_select(:user_id, User.all, :id, :name) %>
+    <%= l.collection_select(:category_ids, Category.all, :id, :username) %>
     
     <div>
         <%= l.label :title, "Title: " %>

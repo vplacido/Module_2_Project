@@ -14,13 +14,6 @@
 
 <%= link_to '<button type="button">Return to Listings</button>'.html_safe, listings_path %>
 
-
-<%= form_tag(listing_path(@listing), method: :delete) do %>
-    <%= submit_tag "Delete Me" %>
-<% end %>
-
-
-
 <%# @listing.reviews.each do  |r| %>
     <%#= r.description %>
 <%# end %>

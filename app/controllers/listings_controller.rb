@@ -7,15 +7,19 @@ class ListingsController < ApplicationController
 
     def show
         @listing = Listing.find(params[:id])
+        # byebug
     end
 
     def new
         @listing = Listing.new
+        # byebug
     end
 
     def create
         # byebug
-        @listing = Listing.create(user_id: session[:user_id], title: listing_params[:title], description: listing_params[:description], time_frame: listing_params[:time_frame], price: listing_params[:price])
+        @listing = Listing.create(user_id: session[:user_id], title: listing_params[:title], description: 
+        listing_params[:description], time_frame: listing_params[:time_frame], price: listing_params[:price])
+        ListingCategory.create(listing_id: @listing.id, category_id: params[:listing][:category_ids].to_i)
         redirect_to listings_path
     end
 

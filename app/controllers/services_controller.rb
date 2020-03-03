@@ -15,7 +15,8 @@ class ServicesController < ApplicationController
     end
 
     def create
-        @service = Service.create(service_params)
+        @service = Service.create(user_id: session[:user_id], title: service_params[:title], description: service_params[:description], time_frame: service_params[:time_frame], price: service_params[:price])
+        ServiceCategory.create(service_id: @service.id, category_id: params[:service][:category_ids].to_i)
         redirect_to service_path(@service)
     end
 
