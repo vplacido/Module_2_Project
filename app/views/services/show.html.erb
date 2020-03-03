@@ -18,7 +18,7 @@
 
 <%= link_to "Edit your service", edit_service_path %>
 <%= link_to "List of services", services_path %>
-<%#= link_to "Create a new review", new_review_path, onclick="service.new.review" %>
+<%= link_to "Create a new review", new_review_path %>
 
 <%= form_tag(service_path(@service), method: :delete) do %>
   <div>
