@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+    before_action :authorized, only: [:new, :create, :edit, :update]
+
     def index
         @reviews = Review.all
     end 

@@ -6,7 +6,6 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :time_frame
       t.float :price
-      t.boolean :packages
 
       t.timestamps
     end

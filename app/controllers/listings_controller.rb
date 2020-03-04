@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
 
+    before_action :authorized, only: [:new, :create, :edit, :update]
+
     def index
         @listings = Listing.all
         # byebug
