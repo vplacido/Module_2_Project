@@ -1,3 +1,4 @@
+<%= link_to "#{@user.username}'s Profile", profile_path %>
 <h1>This is the Homepage</h1>
 
 <h2><%= link_to "View All Categories", categories_path %> </h2>
@@ -17,20 +18,3 @@
 <div>
     <%= link_to "View all Services", services_path %>
 </div>
-
-<h2>Here is Info about <%= @user.username %></h2>
-<%= link_to "#{@user.username}'s Settings", edit_user_path(@user) %>
-
-<h3> My Listings</h3>
-<% @listings.each do |l| %>
-    <% if l.user_id == session[:user_id] %>
-        <%= link_to l.title, listing_path(l) %>
-    <% end %>
-<% end %>
-
-<h3> My Services</h3>
-<% @services.each do |s| %>
-    <% if s.seller_id == session[:user_id] %>
-        <%= link_to s.title, service_path(s) %>
-    <% end %>
-<% end %>

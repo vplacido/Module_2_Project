@@ -1,4 +1,4 @@
-class SettingsController < ApplicationController
+class ProfileController < ApplicationController
     def index
         @user = User.find(session[:user_id])
         @listings = Listing.all
