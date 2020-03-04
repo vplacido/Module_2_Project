@@ -18,4 +18,9 @@
     <% end %>
 <% end %>
 
-<h3>My Purchases</h3>
+<h3>My Cart</h3>
+<% @carts.each do |s| %>
+    <% if Service.find(s.service_id).seller_id == session[:user_id] %>
+        <%= link_to Service.find(s.service_id).title, service_path(s) %>
+    <% end %>
+<% end %>
