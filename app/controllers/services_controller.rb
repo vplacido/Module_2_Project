@@ -6,6 +6,11 @@ class ServicesController < ApplicationController
     
     def index
         @services = Service.all 
+        # if params[:category]
+        #     @service = Service.where('category LIKE ?', "%#{params[:store]}%")
+        # else
+        #     @service = Service.all
+        # end
     end 
 
     def show
@@ -46,8 +51,7 @@ class ServicesController < ApplicationController
     private
 
     def service_params
-        params.require(:service).permit(:title, :description, :time_frame, :price, :seller_id)
-
+        params.require(:service).permit(:title, :description, :time_frame, :price, :seller_id, :category)
     end 
 end
 

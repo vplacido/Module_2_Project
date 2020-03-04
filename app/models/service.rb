@@ -13,6 +13,19 @@ class Service < ApplicationRecord
     def create_review
       self.reviews
     end 
+
+    def self.search(search)
+      if search
+        category = Category.find_by(name: search)
+        if category 
+          self.where(category_ids: category)
+        else 
+          Service.all 
+        end
+      else
+        Service.all 
+      end
+    end
 end
 
 

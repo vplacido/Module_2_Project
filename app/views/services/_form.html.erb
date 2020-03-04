@@ -14,11 +14,6 @@
     <%= s.number_field :price, step: :any %>
     <br>
 
-    <div>
-    <%= l.label :packages, "Packages: " %>
-    <%= l.check_box :packages %>
-    </div>
-
     <h4><%= User.find(session[:user_id]).username %></h4>
     <%#= s.collection_select(:seller_id, User.all, :id, :name) %>
     <%= s.submit %>

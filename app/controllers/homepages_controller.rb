@@ -1,8 +1,15 @@
 class HomepagesController < ApplicationController
     def index
-        @user = User.find(session[:user_id])
-        @listings = Listing.all
-        @services = Service.all
+        if session[:user_id]
+            @user = User.find(session[:user_id])
+            @listings = Listing.all
+            @services = Service.all
+        else
+            @user = nil
+            @listings = Listing.all
+            @services = Service.all
+        end
+
     end
     # change the user index to be the user settings to be able to chnage info 
     # create a about us/contact us page 

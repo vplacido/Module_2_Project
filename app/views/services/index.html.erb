@@ -1,5 +1,10 @@
 <h1>List of Services</h1>
 
+<%= form_tag(services_path, method: :get) do %>
+    <%= text_field_tag :category, params[:category]%>
+    <%= submit_tag "Search Category", name: nil %>
+<% end %>
+
 <ul>
     <% @services.each do |s| %>
         <li>

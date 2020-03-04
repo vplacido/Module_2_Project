@@ -14,7 +14,9 @@
 <h3>Price: <%= @service.price %></h3>
 
 
-
+<% if session[:user_id] != @service.seller_id %>
+  <%#= link_to '<button type="button">Purchase Service</button>'.html_safe, new_cart_path %>
+<% end %>
 <% if session[:user_id] == @service.seller_id %>
   <%= link_to '<button type="button">Edit your service</button>'.html_safe, edit_service_path %>
 <% end %>
@@ -22,5 +24,3 @@
 <%= link_to '<button type="button">Create a new review</button>'.html_safe, new_review_path%>
 
 <h3><%= link_to "Homepage", homepage_path %></h3>
-
-<%# ****create he search function and finish the services categogt, username issue with listing create and service category %>

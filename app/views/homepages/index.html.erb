@@ -1,4 +1,6 @@
-<%= link_to "#{@user.username}'s Profile", profile_path %>
+<% if @user %>
+    <%= link_to "#{@user.username}'s Profile", profile_path %>
+<% end %>
 <h1>This is the Homepage</h1>
 
 <h2><%= link_to "View All Categories", categories_path %> </h2>

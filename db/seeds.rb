@@ -69,7 +69,6 @@ s2 = Service.create(title: "Paint anything", description: "Ask me anything to pa
 s3 = Service.create(title: "Making covers", description: "Will do a cover of any song", time_frame: "7 days", price: 50.00, seller_id: u3.id)
 s4 = Service.create(title: "Food Porn", description: "Will eat anything", time_frame: "2 hours", price: 50.00, seller_id: u7.id)
 s5 = Service.create(title: "Bass", description: "Will play bass lines", time_frame: "2 hours", price: 90.00, seller_id: u6.id)
-s5 = Service.create(title: "Bass", description: "Will play bass lines", time_frame: "2 hours", price: 90.00, seller_id: u6.id)
 
 
 
