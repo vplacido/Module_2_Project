@@ -10,7 +10,9 @@
 <h3>Time Frame: <%= @listing.time_frame %></h3>
 <h3>Price: <%= @listing.price %></h3>
 
-<%= link_to '<button type="button">Edit Listing</button>'.html_safe, edit_listing_path(@listing) %>
+<% if session[:user_id] == @listing.user_id %>
+  <%= link_to '<button type="button">Edit Listing</button>'.html_safe, edit_listing_path(@listing) %>
+<% end %>
 
 <%= link_to '<button type="button">Return to Listings</button>'.html_safe, listings_path %>
 
