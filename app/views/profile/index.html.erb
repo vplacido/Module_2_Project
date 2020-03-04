@@ -1,0 +1,21 @@
+<%= link_to "Home", homepage_path %>
+
+<h1>Profile <%= @user.username %></h1>
+
+<%= link_to "Edit Account", edit_user_path(@user) %>
+
+<h3> My Listings</h3>
+<% @listings.each do |l| %>
+    <% if l.user_id == session[:user_id] %>
+        <%= link_to l.title, listing_path(l) %>
+    <% end %>
+<% end %>
+
+<h3> My Services</h3>
+<% @services.each do |s| %>
+    <% if s.seller_id == session[:user_id] %>
+        <%= link_to s.title, service_path(s) %>
+    <% end %>
+<% end %>
+
+<h3>My Purchases</h3>
