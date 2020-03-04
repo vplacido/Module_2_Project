@@ -1,9 +1,6 @@
 <h1>Information about Listing </h1>
 
-<% @listing.categories.each do |l| %>
-    <%= link_to l.name, category_path(l) %>
-    <br>
-  <% end %>
+
 
 <h3>Title: <%= @listing.title %></h3>
 <h3>Description: <%= @listing.description %></h3>
@@ -12,9 +9,14 @@
 
 <% if session[:user_id] == @listing.user_id %>
   <%= link_to '<button type="button">Edit Listing</button>'.html_safe, edit_listing_path(@listing) %>
+  <%= link_to '<button type="button">Return to Listings</button>'.html_safe, listings_path %>
+<% else 
+  <%= link_to '<button type="button">Message Lister</button>'.html_safe, _path(@listing) %>
 <% end %>
 
 <%= link_to '<button type="button">Return to Listings</button>'.html_safe, listings_path %>
+
+
 
 <%# @listing.reviews.each do  |r| %>
     <%#= r.description %>

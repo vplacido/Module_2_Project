@@ -10,7 +10,6 @@
 User.delete_all
 Service.delete_all
 Listing.delete_all
-ListingCategory.delete_all
 Category.delete_all
 Review.delete_all
 ServiceCategory.delete_all
@@ -64,11 +63,10 @@ l5 = Listing.create(user_id: u2.id, title: "Mokbang", description: "I want to wa
 
 
 
-s1 = Service.create(title: "Play league", description: "Get to play with a cute girl", time_frame: "1 hour", price: 5.00, seller_id: u1.id)
-s2 = Service.create(title: "Paint anything", description: "Ask me anything to paint", time_frame: "2 hours", price: 15.00, seller_id: u2.id)
-s3 = Service.create(title: "Making covers", description: "Will do a cover of any song", time_frame: "7 days", price: 50.00, seller_id: u3.id)
+s1 = Service.create(title: "Play league", description: "Get to play with a cute girl", time_frame: "1 hour", price: 5.00, seller_id: u9.id)
+s2 = Service.create(title: "Paint anything", description: "Ask me anything to paint", time_frame: "2 hours", price: 15.00, seller_id: u8.id)
+s3 = Service.create(title: "Making covers", description: "Will do a cover of any song", time_frame: "7 days", price: 50.00, seller_id: u7.id)
 s4 = Service.create(title: "Food Porn", description: "Will eat anything", time_frame: "2 hours", price: 50.00, seller_id: u7.id)
-s5 = Service.create(title: "Bass", description: "Will play bass lines", time_frame: "2 hours", price: 90.00, seller_id: u6.id)
 s5 = Service.create(title: "Bass", description: "Will play bass lines", time_frame: "2 hours", price: 90.00, seller_id: u6.id)
 
 
@@ -90,9 +88,16 @@ r3 = Review.create(service_id: s1.id, description: "Amazing personality and carr
 r4 = Review.create(service_id: s4.id, description: "Savage", rating: 5.00)
 r5 = Review.create(service_id: s5.id, description: "Great bass skills", rating: 5.00)
 
-c1 = Cart.create(service_id: s1.id)
-c2 = Cart.create(service_id: s2.id)
-c3 = Cart.create(service_id: s3.id)
+cart1 = Cart.create(service_id: s1.id)
+cart2 = Cart.create(service_id: s2.id)
+cart3 = Cart.create(service_id: s3.id)
+
+m1 = Message.create(listing_id: l1.id, user_id: u1, seller_id: u9.id)
+m2 = Message.create(listing_id: l2.id, user_id: u2, seller_id: u8.id)
+m3 = Message.create(listing_id: l3.id, user_id: u3, seller_id: u7.id)
+
+
+
 
 # sc1 = ServiceCategory.create(service_id: 1, category_id: 1)
 # sc1 = ServiceCategory.create(service_id: 2, category_id: 2)
