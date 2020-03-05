@@ -39,6 +39,14 @@ class Service < ApplicationRecord
     newArr = newArr.select{|s| !cartArr.include?(s.id)}
     newArr
   end
+
+  def self.selectAll(user)
+    newArr = Service.all.select{|s| s.seller_id != user }
+    cartArr = Cart.all.select{|c| c.user_id == user }
+    cartArr = cartArr.map{|c| c.service_id }
+    newArr = newArr.select{|s| cartArr.include?(s.id)}
+    newArr
+  end
 end
 
 
