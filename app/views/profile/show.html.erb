@@ -1,8 +1,8 @@
 <%= link_to "Home", homepage_path %>
 
 <h1>Profile <%= @user.username %></h1>
+<%= link_to '<button type="button">Edit Account</button>'.html_safe, edit_user_path(@user) %>
 
-<%= link_to "Edit Account", edit_user_path(@user) %>
 
 <h3> My Listings</h3>
 <% @listings.each do |l| %>
@@ -27,6 +27,12 @@
                 <%= Service.find(s.service_id).description %>
                 <%= Service.find(s.service_id).price %>
                 <%= Service.find(s.service_id).time_frame %>
+                <% if Review.hasReview(s, session[:user_id]) %>
+                    <%= Review.find_by(service_id: s.service_id).description %>
+                    <%= Review.find_by(service_id: s.service_id).rating %>
+                <% else %>
+                    <%= link_to '<button type="button">Write Review</button>'.html_safe, new_review_path %>
+                <% end %>
             </li>
         <% end %>
         <%# if Service.find(s.service_id).seller_id == session[:user_id] %>

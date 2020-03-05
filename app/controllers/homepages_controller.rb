@@ -8,8 +8,7 @@ class HomepagesController < ApplicationController
             @user = nil
             @listings = Listing.all
             @services = Service.all
-        end
-
+        end        
     end
     # change the user index to be the user settings to be able to chnage info 
     # create a about us/contact us page 
