@@ -30,9 +30,12 @@ class Service < ApplicationRecord
     #   Service.all 
     # end
   end
-
+  # class method to select the services the seller does not own to allow them to purchase the service
   def self.selectAllExcept(user)
-    newArr = Service.all.select{|s| s.seller_id != user}
+    newArr = Service.all.select{|s| s.seller_id != user }
+    cartArr = Cart.all.select{|c| c.user_id == user }
+    cartArr = cartArr.map{|c| c.service_id }
+    newArr = newArr.select{|s| !cartArr.include?(s.id)}
     newArr
   end
 end

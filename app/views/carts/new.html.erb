@@ -1,10 +1,15 @@
-<h1>Complete Purchase</h1>
-<%= form_for @cart do |c| %>
-    <%= c.label :user_id %>
-    <h3>Username: <%= User.find(session[:user_id]).username %></h3>
-    <%= c.label :service_id %>
-    <%= c.collection_select :service_id, Service.selectAllExcept(session[:user_id]), :id, :title %>
-     <%#= c.collection_select :service_id, Service.selectAllExcept(session[:user_id]), :id, :title %>
-    <h3>Service: <%#= Service.find(Service.find(@cart.service_id)).title %></h3>
-    <%= c.submit "Complete Purchase" %>
+<% if Service.selectAllExcept(session[:user_id]).empty? %>
+    <h1>Sorry you have purchased all the Services</h1>
+    <%= link_to "Home", homepage_path %>
+<% else %>
+    <h1>Complete Purchase</h1>
+    <%= form_for @cart do |c| %>
+        <%= c.label :user_id %>
+        <h3>Username: <%= User.find(session[:user_id]).username %></h3>
+        <%= c.label :service_id %>
+        <%= c.collection_select :service_id, Service.selectAllExcept(session[:user_id]), :id, :title %>
+        <%#= c.collection_select :service_id, Service.selectAllExcept(session[:user_id]), :id, :title %>
+        <h3>Service: <%#= Service.find(Service.find(@cart.service_id)).title %></h3>
+        <%= c.submit "Complete Purchase" %>
+    <% end %>
 <% end %>
