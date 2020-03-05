@@ -18,7 +18,7 @@
   <% if session[:user_id] == nil %>
     <%= link_to '<button type="button">Purchase Service</button>'.html_safe, login_path %>
   <% else %>
-    <%= link_to '<button type="button">Purchase Service</button>'.html_safe, homepage_path %>
+    <%= link_to '<button type="button">Purchase Service</button>'.html_safe, new_cart_path %>
   <% end %>
 <% end %>
 <% if session[:user_id] == @service.seller_id %>

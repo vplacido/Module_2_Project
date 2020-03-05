@@ -1,0 +1,6 @@
+<h1> Information about purchase </h1>
+
+<h3>Buyer: <%= User.find(@cart.user_id]).username %></h3>
+<h3>Service: <%= Service.find(@cart.service_id).title %></h3>
+
+<%= link_to "Home", profile_path(session[:user_id]) %>

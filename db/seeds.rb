@@ -14,6 +14,7 @@ ListingCategory.delete_all
 Category.delete_all
 Review.delete_all
 ServiceCategory.delete_all
+Cart.delete_all
 
 # u1 = User.create(name: "Valentin", username: "valentinp", password_digest: "password", profession: "student", email: "valentinp@yahoo.com")
 # u2 = User.create(name: "Yo", username: "yop", password_digest: "123qwe", profession: "student", email: "yop@yahoo.com")
@@ -89,9 +90,9 @@ r3 = Review.create(service_id: s1.id, description: "Amazing personality and carr
 r4 = Review.create(service_id: s4.id, description: "Savage", rating: 5.00)
 r5 = Review.create(service_id: s5.id, description: "Great bass skills", rating: 5.00)
 
-c1 = Cart.create(service_id: s1.id)
-c2 = Cart.create(service_id: s2.id)
-c3 = Cart.create(service_id: s3.id)
+c1 = Cart.create(user_id: u4.id, service_id: s1.id)
+c2 = Cart.create(user_id: u7.id, service_id: s2.id)
+c3 = Cart.create(user_id: u6.id, service_id: s3.id)
 
 # sc1 = ServiceCategory.create(service_id: 1, category_id: 1)
 # sc1 = ServiceCategory.create(service_id: 2, category_id: 2)

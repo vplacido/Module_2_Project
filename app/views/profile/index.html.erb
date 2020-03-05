@@ -18,9 +18,19 @@
     <% end %>
 <% end %>
 
-<h3>My Cart</h3>
-<% @carts.each do |s| %>
-    <% if Service.find(s.service_id).seller_id == session[:user_id] %>
-        <%= link_to Service.find(s.service_id).title, service_path(s) %>
+<h3>My Purchases</h3>
+<ul>
+    <% @carts.each do |s| %>
+        <% if s.user_id == session[:user_id] %>
+            <li>
+                <%= Service.find(s.service_id).title %>
+                <%= Service.find(s.service_id).description %>
+                <%= Service.find(s.service_id).price %>
+                <%= Service.find(s.service_id).time_frame %>
+            </li>
+        <% end %>
+        <%# if Service.find(s.service_id).seller_id == session[:user_id] %>
+            <%#= link_to Service.find(s.service_id).title, service_path(s) %>
+        <%# end %>
     <% end %>
-<% end %>
+</ul>

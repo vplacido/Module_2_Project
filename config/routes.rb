@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
   resources :categories, only: [:index, :show]
+  resources :carts, only: [:show, :new, :create]
 
   # get “/login”, to: “sessions#new”
   # post “/login”, to: “sessions#create”
