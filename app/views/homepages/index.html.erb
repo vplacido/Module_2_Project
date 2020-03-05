@@ -1,6 +1,6 @@
 <div class="home">
     <% if @user %>
-        <%= link_to "#{@user.username}'s Profile", profile_path %>
+        <%= link_to "#{@user.username}'s Profile", profile_path(@user) %>
     <% end %>
 
     <h1>This is the Homepage</h1>

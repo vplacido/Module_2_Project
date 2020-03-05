@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#logout"  
   
-  get "/profile", to: "profile#index"
+  # get "/profile", to: "profile#index"
   
   
   resources :listings
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :categories, only: [:index, :show]
   resources :carts, only: [:show, :new, :create]
+  resources :profile, only: [:show]
 
   # get “/login”, to: “sessions#new”
   # post “/login”, to: “sessions#create”
