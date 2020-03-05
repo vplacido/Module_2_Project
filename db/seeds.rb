@@ -10,7 +10,6 @@
 User.delete_all
 Service.delete_all
 Listing.delete_all
-ListingCategory.delete_all
 Category.delete_all
 Review.delete_all
 ServiceCategory.delete_all
@@ -65,9 +64,9 @@ l5 = Listing.create(user_id: u2.id, title: "Mokbang", description: "I want to wa
 
 
 
-s1 = Service.create(title: "Play league", description: "Get to play with a cute girl", time_frame: "1 hour", price: 5.00, seller_id: u1.id)
-s2 = Service.create(title: "Paint anything", description: "Ask me anything to paint", time_frame: "2 hours", price: 15.00, seller_id: u2.id)
-s3 = Service.create(title: "Making covers", description: "Will do a cover of any song", time_frame: "7 days", price: 50.00, seller_id: u3.id)
+s1 = Service.create(title: "Play league", description: "Get to play with a cute girl", time_frame: "1 hour", price: 5.00, seller_id: u9.id)
+s2 = Service.create(title: "Paint anything", description: "Ask me anything to paint", time_frame: "2 hours", price: 15.00, seller_id: u8.id)
+s3 = Service.create(title: "Making covers", description: "Will do a cover of any song", time_frame: "7 days", price: 50.00, seller_id: u7.id)
 s4 = Service.create(title: "Food Porn", description: "Will eat anything", time_frame: "2 hours", price: 50.00, seller_id: u7.id)
 s5 = Service.create(title: "Bass", description: "Will play bass lines", time_frame: "2 hours", price: 90.00, seller_id: u6.id)
 
