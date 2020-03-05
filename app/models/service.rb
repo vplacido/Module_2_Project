@@ -30,6 +30,11 @@ class Service < ApplicationRecord
     #   Service.all 
     # end
   end
+
+  def self.selectAllExcept(user)
+    newArr = Service.all.select{|s| s.seller_id != user}
+    newArr
+  end
 end
 
 
