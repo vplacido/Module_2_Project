@@ -5,6 +5,7 @@
     <%= r.label :rating %>
     <%= r.number_field :rating, step: :any %>
     <br>
-    <%= r.collection_select(:service, Service.all, :id, :title) %>
+    <%= r.collection_select(:service, Service.selectAllExcept(session[:user_id]), :id, :title) %>
+    <%#= r.collection_select(:service, Service.all, :id, :title) %>
     <%= r.submit %>
 <% end %>
