@@ -5,7 +5,8 @@ class ServicesController < ApplicationController
 
     
     def index
-        @services = Service.all 
+        # @services = Service.all 
+        @services = Service.search(params[:search])
         # if params[:category]
         #     @service = Service.where('category LIKE ?', "%#{params[:store]}%")
         # else
