@@ -18,5 +18,21 @@
 
 
  .home {
-     background-color: aqua;
+     background-color: rgb(255, 255, 255);
+     text-align: center;
+     line-height: 2em;
  }
+
+ .listing {
+     text-align: center;
+     line-height: 2em;
+ }
+
+ .grid-container {
+    display: grid;
+    grid-gap: 50px 100px;
+  }
+
+  .button {
+      padding-left: 100px;
+  }

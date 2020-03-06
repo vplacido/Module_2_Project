@@ -28,9 +28,6 @@
     <%= render 'layouts/navbar' %>
     <div class="header">
       <% if session[:user_id] %>
-       <h4>Welcome 
-         <%= current_user %>
-       </h4>
         <span><% link_to "Logout", logout_path %></span>
       <% else %>
         <% link_to "Login", login_path %>

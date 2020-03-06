@@ -1,16 +1,13 @@
-<h1>All of the Listings</h1>
-
-<ul>
-    <% @listings.each do |l| %>
-        <li>
-            <%= link_to l.title, listing_path(l) %>
-        </l1>
-    <% end %>
-</ul>
-
-<%= link_to "Create a New Listing", new_listing_path %>
-
-<div>
-    <%= link_to "List of services", services_path %>
+<h1 class="listing">Listings</h1>
+<div class="listing"> 
+    <div class="grid-container">
+        <% @listings.each do |l| %>
+            <div class="grid-item">
+                <%= link_to l.title, listing_path(l) %>
+            </div>
+        <% end %>
+        </div>
 </div>
-<h3><%= link_to "Homepage", homepage_path %></h3>
+<div class="button">
+    <%= link_to '<button type="button">Create a New Listing</button>'.html_safe, new_listing_path %>
+</div>
