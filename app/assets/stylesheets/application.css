@@ -28,6 +28,16 @@
      line-height: 2em;
  }
 
+ .service {
+    text-align: center;
+    line-height: 2em;
+}
+
+.review {
+    text-align: center;
+    line-height: 2em;
+}
+
  .grid-container {
     display: grid;
     grid-gap: 50px 100px;
