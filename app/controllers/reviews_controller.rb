@@ -17,8 +17,8 @@ class ReviewsController < ApplicationController
 
     def create
         # byebug
-        @review = Review.create(service_id: params[:review][:service], description: params[:review][:description], rating: params[:review][:rating])
-        redirect_to reviews_path
+        @review = Review.create(service_id: params[:review][:service], user_id: session[:user_id], description: params[:review][:description], rating: params[:review][:rating])
+        redirect_to 
     end
 
     def edit

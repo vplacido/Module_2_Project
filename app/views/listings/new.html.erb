@@ -1,35 +1,29 @@
-<h1>Create a New Listing</h1>
+<div class="newPage">
+    <h1>Create a New Listing</h1>
 
+    <%= form_for @listing do |l| %>    
+        <div>
+            <%= l.label :title, "Title: " %>
+            <%= l.text_field :title %>
+        </div>
 
+        <div>
+            <%= l.label :description, "Description: " %>
+            <%= l.text_field :description %>
+        </div>
 
-<%= form_for @listing do |l| %>
-    <%#= l.collection_select(:user_id, User.all, :id, :name) %>
-    <%= l.collection_select(:category_ids, Category.all, :id, :name) %>
-    
-    <div>
-        <%= l.label :title, "Title: " %>
-        <%= l.text_field :title %>
-    </div>
+        <div>
+            <%= l.label :time_frame, "Time Frame: " %>
+            <%= l.text_field :time_frame %>
+        </div>
 
-    <div>
-        <%= l.label :description, "Description: " %>
-        <%= l.text_field :description %>
-    </div>
+        <div>
+            <%= l.label :price, "Price: " %>
+            <%= l.number_field :price, step: :any %>
+        </div>
 
-    <div>
-        <%= l.label :time_frame, "Time Frame: " %>
-        <%= l.text_field :time_frame %>
-    </div>
-
-    <div>
-        <%= l.label :price, "Price: " %>
-        <%= l.number_field :price, step: :any %>
-    </div>
-
-    <div>
-        <%= l.submit "Create Listing" %>
-    </div>
-<% end %>
-
-<%= link_to "Return to Homepage", listings_path %>
-<h3><%= link_to "Homepage", homepage_path %></h3>
+        <div>
+            <%= l.submit "Create Listing" %>
+        </div>
+    <% end %>
+</div>

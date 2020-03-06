@@ -26,6 +26,7 @@
  .listing {
      text-align: center;
      line-height: 2em;
+     padding-top: 25px;
  }
 
  .grid-container {
@@ -35,4 +36,16 @@
 
   .button {
       padding-left: 100px;
+  }
+
+  .editPage {
+      text-align: center;
+      padding-top: 100px;
+      line-height: 2em;
+  }
+
+  .newPage {
+    text-align: center;
+    padding-top: 100px;
+    line-height: 2em;
   }

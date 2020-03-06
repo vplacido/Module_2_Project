@@ -1,6 +1,5 @@
 <%= form_for @service do |s| %>
-    <%#= s.collection_select(:category_ids, Category.all, :id, :name) %>
-    <%= s.collection_select(:category_ids, Category.all, :id, :name) %>
+    <h5>Category <%= s.collection_select(:category_ids, Category.all, :id, :name) %></h5>
     <%= s.label :title %>
     <%= s.text_field :title %>
     <br>
@@ -13,10 +12,5 @@
     <%= s.label :price %>
     <%= s.number_field :price, step: :any %>
     <br>
-
-    <h4><%= User.find(session[:user_id]).username %></h4>
-    <%#= s.collection_select(:seller_id, User.all, :id, :name) %>
     <%= s.submit %>
 <% end %>
-<h3><%= link_to "Homepage", homepage_path %></h3>
-

@@ -1,22 +1,21 @@
-<h1>Edit User</h1>
+<div class="editPage">
+    <h1>Edit User</h1>
+    <%= form_for @user do |u| %>
+        <%= u.label :name, "Name" %>
+        <%= u.text_field :name %>
 
-<%= form_for @user do |u| %>
-    <%= u.label :name, "Name" %>
-    <%= u.text_field :name %>
+        <%= u.label :username, "Username" %>
+        <%= u.text_field :username %>
 
-    <%= u.label :username, "Username" %>
-    <%= u.text_field :username %>
+        <%= u.label :password, "Password" %>
+        <%= u.text_field :password %>
 
-    <%= u.label :password, "Password" %>
-    <%= u.text_field :password %>
+        <%= u.label :profession, "Profession" %>
+        <%= u.text_field :profession %>
 
-    <%= u.label :profession, "Profession" %>
-    <%= u.text_field :profession %>
+        <%= u.label :email, "Email" %>
+        <%= u.text_field :email %>
 
-    <%= u.label :email, "Email" %>
-    <%= u.text_field :email %>
-
-    <%= u.submit "Edit User" %>
-<% end %>
-
-<%= link_to "Homepage", homepage_path %>
+        <%= u.submit "Edit User" %>
+    <% end %>
+</div>

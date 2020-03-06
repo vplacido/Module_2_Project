@@ -21,8 +21,8 @@ class ListingsController < ApplicationController
         # byebug
         @listing = Listing.create(user_id: session[:user_id], title: listing_params[:title], description: 
         listing_params[:description], time_frame: listing_params[:time_frame], price: listing_params[:price])
-        ListingCategory.create(listing_id: @listing.id, category_id: params[:listing][:category_ids].to_i)
-        redirect_to listings_path
+        # ListingCategory.create(listing_id: @listing.id, category_id: params[:listing][:category_ids].to_i)
+        redirect_to listing_path(@listing)
     end
 
     def edit
@@ -45,6 +45,6 @@ class ListingsController < ApplicationController
     private 
 
     def listing_params
-        params.require(:listing).permit(:title, :description, :time_frame, :price, :packages)
+        params.require(:listing).permit(:title, :description, :time_frame, :price)
     end
 end

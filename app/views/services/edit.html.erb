@@ -1,12 +1,13 @@
-<h1> Edit your service </h1>
-
-<% if session[:user_id] == @service.seller_id %>
-    <%= render 'form' %>
-    <%= form_tag(service_path(@service), method: :delete) do %>
-        <div>
-          <%= submit_tag 'Remove this service' %>
-        </div>
-      <% end %>
-<% else %>
-    <h1>Sorry only <%= User.find(@service.seller_id).username %> can edit this listing!</h1>
-<% end %>
+<div class="editPage">
+  <h1> Edit <%= @service.title %></h1>
+  <% if session[:user_id] == @service.seller_id %>
+      <%= render 'form' %>
+      <%= form_tag(service_path(@service), method: :delete) do %>
+          <div>
+            <%= submit_tag 'Delete Service' %>
+          </div>
+        <% end %>
+  <% else %>
+      <h1>Sorry only <%= User.find(@service.seller_id).username %> can edit this listing!</h1>
+  <% end %>
+</div>

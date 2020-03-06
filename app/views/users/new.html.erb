@@ -1,20 +1,22 @@
-<h1>Create a New User</h1> or <%= link_to "Login", login_path %></h1>
+<div class="newPage">
+    <h1>Create an Account or <%= link_to "Login", login_path %></h1>
 
-<%= form_for @user do |u| %>
-    <%= u.label :name, "Name: " %>
-    <%= u.text_field :name %>
+    <%= form_for @user do |u| %>
+        <%= u.label :name, "Name: " %>
+        <%= u.text_field :name %>
 
-    <%= u.label :username, "Userame: " %>
-    <%= u.text_field :username %>
+        <%= u.label :username, "Userame: " %>
+        <%= u.text_field :username %>
 
-    <%= u.label :password, "Password: " %>
-    <%= u.password_field :password %>
+        <%= u.label :password, "Password: " %>
+        <%= u.password_field :password %>
 
-    <%= u.label :profession, "Profession: " %>
-    <%= u.text_field :profession %>
+        <%= u.label :profession, "Profession: " %>
+        <%= u.text_field :profession %>
 
-    <%= u.label :email, "Email: " %>
-    <%= u.text_field :email %>
+        <%= u.label :email, "Email: " %>
+        <%= u.text_field :email %>
 
-    <%= u.submit "Create User" %>
-<% end %>
+        <%= u.submit "Create User" %>
+    <% end %>
+</div>

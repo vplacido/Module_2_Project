@@ -83,11 +83,11 @@ sc5 = ServiceCategory.create(service_id: s5.id, category_id: c3.id)
 
     
 
-r1 = Review.create(service_id: s3.id, description: "Need to get some vocal lessons...", rating: 1.00)
-r2 = Review.create(service_id: s2.id, description: "Amazing drawing skills!", rating: 4.00)
-r3 = Review.create(service_id: s1.id, description: "Amazing personality and carried my games", rating: 5.00)
-r4 = Review.create(service_id: s4.id, description: "Savage", rating: 5.00)
-r5 = Review.create(service_id: s5.id, description: "Great bass skills", rating: 5.00)
+r1 = Review.create(service_id: s3.id, user_id: u1.id, description: "Need to get some vocal lessons...", rating: 1.00)
+r2 = Review.create(service_id: s2.id, user_id: u3.id, description: "Amazing drawing skills!", rating: 4.00)
+r3 = Review.create(service_id: s1.id, user_id: u2.id, description: "Amazing personality and carried my games", rating: 5.00)
+r4 = Review.create(service_id: s4.id, user_id: u1.id, description: "Savage", rating: 5.00)
+r5 = Review.create(service_id: s5.id, user_id: u8.id, description: "Great bass skills", rating: 5.00)
 
 c1 = Cart.create(user_id: u4.id, service_id: s1.id)
 c2 = Cart.create(user_id: u7.id, service_id: s2.id)
