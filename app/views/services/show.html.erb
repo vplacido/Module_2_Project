@@ -1,22 +1,25 @@
-<h1> Detail page </h1>
 
-<% @service.categories.each do |c| %>
-  <%= link_to c.name, category_path(c) %>
-  <br>
-<% end %>
+<h1 class="service">Service Info</h1>
+<div class="service"> 
+    <div class="grid-container">
+      <div class="grid-item">
+        <% @service.categories.each do |c| %>
+          <h2><%= link_to c.name, category_path(c) %></h2>
+        <% end %>
 
-<h3>Title: <%= @service.title %></h3>
+        <p>Title: <%= @service.title %></p>
 
-<h3>Description: <%= @service.description %></h3>
+        <p>Description: <%= @service.description %></p>
 
-<h3>Time Frame: <%= @service.time_frame %></h3>
+        <p>Time Frame: <%= @service.time_frame %></p>
 
-<h3>Price: <%= @service.price %></h3>
+        <p>Price: <%= @service.price %></p>
 
 
 <% if session[:user_id] != @service.seller_id %>
   <% if session[:user_id] == nil %>
     <%= link_to '<button type="button">Purchase Service</button>'.html_safe, login_path %>
+    <br>
   <% else %>
     <%= link_to '<button type="button">Purchase Service</button>'.html_safe, new_cart_path %>
   <% end %>
@@ -26,5 +29,6 @@
 <% end %>
 <%= link_to '<button type="button">List of services</button>'.html_safe, services_path %>
 <%= link_to '<button type="button">Create a new review</button>'.html_safe, new_review_path%>
-
-<h3><%= link_to "Homepage", homepage_path %></h3>
+</div>
+</div>
+</div>

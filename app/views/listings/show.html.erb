@@ -1,27 +1,30 @@
-<h1>Information about Listing </h1>
 
 
 
-<h3>Title: <%= @listing.title %></h3>
-<h3>Description: <%= @listing.description %></h3>
-<h3>Time Frame: <%= @listing.time_frame %></h3>
-<h3>Price: <%= @listing.price %></h3>
-
-<% if session[:user_id] == @listing.user_id %>
-  <%= link_to '<button type="button">Edit Listing</button>'.html_safe, edit_listing_path(@listing) %>
-<% else %>
-  <% if session[:user_id] == nil %>
-    <%= link_to '<button type="button">Purchase Listing</button>'.html_safe, login_path %>
-  <% else %>
-    <%= link_to '<button type="button">Purchase Listing</button>'.html_safe, homepage_path %>
-  <% end %>
+<h1 class="listing">Listing Info</h1>
+<div class="listing"> 
+    <div class="grid-container">
+      <div class="grid-item">
+        <div>Title: <%= @listing.title %></div>
+        <div>Description: <%= @listing.description %></div>
+        <div>Time Frame: <%= @listing.time_frame %></div>
+        <div>Price: <%= @listing.price %></div>
+      </div>
+      <% if session[:user_id] == @listing.user_id %>
+          <%= link_to '<button type="button">Edit Listing</button>'.html_safe, edit_listing_path(@listing) %>
+      <% else %>
+        <% if session[:user_id] == nil %>
+          <%= link_to '<button type="button">Purchase Listing</button>'.html_safe, login_path %>
+      <% else %>
+          <%= link_to '<button type="button">Purchase Listing</button>'.html_safe, homepage_path %>
+      <% end %>
 <% end %>
 
 <%= link_to '<button type="button">Return to Listings</button>'.html_safe, listings_path %>
 
-
+</div>
+</div>
 
 <%# @listing.reviews.each do  |r| %>
     <%#= r.description %>
 <%# end %>
-<h3><%= link_to "Homepage", homepage_path %></h3>
