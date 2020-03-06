@@ -27,9 +27,12 @@
                 <%= Service.find(s.service_id).description %>
                 <%= Service.find(s.service_id).price %>
                 <%= Service.find(s.service_id).time_frame %>
-                <% if Review.hasReview(s, session[:user_id]) %>
-                    <%= Review.find_by(service_id: s.service_id).description %>
-                    <%= Review.find_by(service_id: s.service_id).rating %>
+                <%# if Review.hasReview(s, session[:user_id]) %>
+                <% if Review.hasUser(s.service_id, session[:user_id]) %>
+                    <%#= Review.find_by(service_id: s.service_id).description %>
+                    <%= Review.getReview(s.service_id, session[:user_id]).description %>
+                    <%#= Review.find_by(service_id: s.service_id).rating %>
+                    <%= Review.getReview(s.service_id, session[:user_id]).rating %>
                 <% else %>
                     <%= link_to '<button type="button">Write Review</button>'.html_safe, new_review_path %>
                 <% end %>
