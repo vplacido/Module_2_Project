@@ -1,24 +1,28 @@
-<h1>List of Services</h1>
 
-<%= form_tag services_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
 
-<ul>
-    <% @services.each do |s| %>
-        <li>
-            <%= link_to s.title, service_path(s) %>
-        </li>
-    <% end %>
-</ul>
+<h1 class="service">Services</h1>
+<div class="service"> 
+    <div class="grid-container">
+        <% @services.each do |s| %>
+            <div class="grid-item">
+                <%= link_to s.title, service_path(s) %>
+            </div>
+        <% end %>
+        </div>
+        <div>
+        <p>
+        <p>
+        <p>
+        <%= link_to '<button type="button">Create a New Service</button>'.html_safe, new_service_path %>
+        <p>
+    <%= link_to '<button type="button">Go to users</button>'.html_safe, users_path %>
 
-<div>
-    <%= link_to "Offer a service", new_service_path %>
 </div>
-
-<div>
-    <%= link_to "Go to users", users_path %>
+    
 </div>
-
-<h3><%= link_to "Homepage", homepage_path %></h3>
+</div>
+<%#= form_tag services_path, :method => 'get' do %>
+    <%#= text_field_tag :search, params[:search] %>
+    <%#= submit_tag "Search", :name => nil %>
+<%# end %>
+<div class="button">
