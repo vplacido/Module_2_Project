@@ -1,0 +1,19 @@
+<h1>Send Message</h1>
+<%= form_for @message do |m| %>
+    <%= m.label :user_id %>
+    <h3>Username: <%= User.find(session[:user_id]).username %></h3>
+    <%= m.label :listing_id %>
+    <%= m.collection_select :listing_id, Listing.all, :id, :title %>
+    <br>
+    <%= m.label :title %>
+    <%= m.text_field :title %>
+    <br>
+    <%= m.label :description %>
+    <%= m.text_area :description %>
+    <br>
+    <%= m.submit "Send Message" %>
+
+<% end %>
+
+<%= link_to "Return to Listings", listings_path %>
+<h3><%= link_to "Homepage", homepage_path %></h3>

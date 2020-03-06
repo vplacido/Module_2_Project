@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2020_03_04_203755) do
   create_table "messages", force: :cascade do |t|
     t.integer "listing_id"
     t.integer "user_id"
-    t.integer "seller_id"
-    t.string "text"
+    t.string "title"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

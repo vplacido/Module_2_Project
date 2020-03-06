@@ -3,8 +3,9 @@ class CreateMessages < ActiveRecord::Migration[6.0]
     create_table :messages do |t|
       t.integer :listing_id
       t.integer :user_id
-      t.integer :seller_id
-      t.string :text
+      # t.integer :seller_id
+      t.string :title
+      t.string :description
       
       t.timestamps
     end

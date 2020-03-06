@@ -34,3 +34,16 @@
         <%# end %>
     <% end %>
 </ul>
+
+<h4>My Messages</h4>
+<% @messages.each do |l| %>
+    <% if l.listing_id == session[:user_id] %>
+        <li>
+            <%#= Message.find(l.user_id).username %>
+            <%#= Message.find(l.service_id).title %>
+            <%#= Message.find(l.service_id).description %>
+            <%= l.title %>
+            <%= l.description %>
+        </li>
+    <% end %>
+<% end %>
