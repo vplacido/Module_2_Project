@@ -4,6 +4,5 @@ class ProfileController < ApplicationController
         @listings = Listing.all
         @services = Service.all
         @carts = Cart.all
-        # byebug
     end
 end
