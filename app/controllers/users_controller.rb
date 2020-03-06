@@ -56,3 +56,7 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :password)
     end 
 end
+
+
+# crete css for 
+# homepage, new account, new service, new listing, new comment, new buy service, new review
