@@ -25,20 +25,6 @@ ActiveRecord::Schema.define(version: 2020_03_04_203755) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "seller_id"
-    t.integer "buyer_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "listing_categories", force: :cascade do |t|
-    t.integer "listing_id"
-    t.integer "category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "listings", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"

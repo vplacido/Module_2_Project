@@ -29,6 +29,13 @@
      padding-top: 25px;
  }
 
+
+ .category {
+    text-align: center;
+    line-height: 2em;
+    padding-top: 25px;
+}
+
  .service {
     text-align: center;
     line-height: 2em;
